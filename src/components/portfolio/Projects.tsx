@@ -85,7 +85,9 @@ export function Projects() {
 
               <div className="mt-6 flex items-center gap-3 border-t border-border pt-4 text-sm">
                 <a
-                  href="#"
+                  href="https://github.com/businesssdileep-byte?tab=repositories"
+                  target="_blank"
+                  rel="noreferrer"
                   className="inline-flex items-center gap-1.5 text-muted-foreground transition-colors hover:text-foreground"
                 >
                   <Github size={15} /> Code
