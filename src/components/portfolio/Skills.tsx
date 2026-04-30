@@ -38,7 +38,7 @@ const tools = [
 export function Skills() {
   const ref = useReveal<HTMLDivElement>();
   return (
-    <section id="skills" className="relative py-24 sm:py-32">
+    <section id="skills" className="relative py-24 sm:py-32 bg-white">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading
           eyebrow="Skills"
