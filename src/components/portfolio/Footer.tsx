@@ -55,7 +55,9 @@ export function Footer() {
                 <Linkedin size={16} />
               </a>
               <a
-                href="#"
+                href="https://github.com/businesssdileep-byte?tab=repositories"
+                target="_blank"
+                rel="noreferrer"
                 aria-label="GitHub"
                 className="flex h-10 w-10 items-center justify-center rounded-xl glass transition-colors hover:bg-white/[0.08]"
               >
