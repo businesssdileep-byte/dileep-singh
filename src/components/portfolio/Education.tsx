@@ -24,7 +24,7 @@ const extras = [
 export function Education() {
   const ref = useReveal<HTMLDivElement>();
   return (
-    <section id="education" className="relative py-24 sm:py-32">
+    <section id="education" className="relative py-24 sm:py-32 bg-white">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading eyebrow="Background" title="Education & beyond." />
 

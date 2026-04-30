@@ -46,7 +46,7 @@ export function Projects() {
                 className="pointer-events-none absolute -inset-px rounded-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                 style={{
                   background:
-                    "linear-gradient(135deg, oklch(0.72 0.18 255 / 0.4), transparent 60%)",
+                    "linear-gradient(135deg, rgba(37, 99, 235, 0.35), transparent 60%)",
                   WebkitMask:
                     "linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0)",
                   WebkitMaskComposite: "xor",
