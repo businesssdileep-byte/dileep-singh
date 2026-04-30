@@ -66,52 +66,63 @@
 :root {
   --radius: 0.875rem;
 
-  /* Deep premium dark palette */
-  --background: oklch(0.16 0.02 265);
-  --foreground: oklch(0.97 0.01 250);
+  /* ===== Light theme — clean SaaS dashboard ===== */
+  /* Brand tokens (mirrors of the requested SCSS variables) */
+  --primary-color: #eaf6ff;     /* page background tint */
+  --secondary-color: #2563eb;   /* primary action blue */
+  --text-primary: #0f172a;      /* headings / primary text */
+  --text-secondary: #475569;    /* muted text */
+  --white: #ffffff;
+  --border-color: #e2e8f0;
 
-  --card: oklch(0.21 0.025 265);
-  --card-foreground: oklch(0.97 0.01 250);
+  /* Semantic tokens (consumed by Tailwind via @theme inline) */
+  --background: #eaf6ff;
+  --foreground: #0f172a;
 
-  --popover: oklch(0.19 0.025 265);
-  --popover-foreground: oklch(0.97 0.01 250);
+  --card: #ffffff;
+  --card-foreground: #0f172a;
 
-  --primary: oklch(0.72 0.18 255);          /* electric blue */
-  --primary-foreground: oklch(0.15 0.02 265);
-  --primary-glow: oklch(0.78 0.2 280);      /* violet glow */
+  --popover: #ffffff;
+  --popover-foreground: #0f172a;
 
-  --secondary: oklch(0.27 0.04 265);
-  --secondary-foreground: oklch(0.97 0.01 250);
+  --primary: #2563eb;
+  --primary-foreground: #ffffff;
+  --primary-glow: #60a5fa;
 
-  --muted: oklch(0.24 0.03 265);
-  --muted-foreground: oklch(0.7 0.02 255);
+  --secondary: #f1f5f9;
+  --secondary-foreground: #0f172a;
 
-  --accent: oklch(0.74 0.17 195);           /* cyan accent */
-  --accent-foreground: oklch(0.15 0.02 265);
+  --muted: #f1f5f9;
+  --muted-foreground: #475569;
 
-  --destructive: oklch(0.65 0.22 25);
-  --destructive-foreground: oklch(0.97 0.01 250);
+  --accent: #dbeafe;
+  --accent-foreground: #1e3a8a;
 
-  --border: oklch(1 0 0 / 8%);
-  --input: oklch(1 0 0 / 12%);
-  --ring: oklch(0.72 0.18 255);
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
 
-  /* Gradients & shadows */
-  --gradient-primary: linear-gradient(135deg, oklch(0.72 0.18 255), oklch(0.78 0.2 280));
-  --gradient-accent: linear-gradient(135deg, oklch(0.74 0.17 195), oklch(0.72 0.18 255));
-  --gradient-hero: radial-gradient(ellipse 80% 60% at 50% 0%, oklch(0.78 0.2 280 / 0.25), transparent 60%),
-                   radial-gradient(ellipse 60% 50% at 80% 30%, oklch(0.74 0.17 195 / 0.18), transparent 60%),
-                   radial-gradient(ellipse 60% 50% at 20% 60%, oklch(0.72 0.18 255 / 0.2), transparent 60%);
-  --gradient-text: linear-gradient(135deg, oklch(0.97 0.01 250) 0%, oklch(0.78 0.18 270) 60%, oklch(0.74 0.17 195) 100%);
+  --border: #e2e8f0;
+  --input: #e2e8f0;
+  --ring: #2563eb;
 
-  --shadow-glow: 0 0 60px -10px oklch(0.72 0.18 255 / 0.5);
-  --shadow-card: 0 10px 40px -15px oklch(0 0 0 / 0.6), 0 0 0 1px oklch(1 0 0 / 0.04);
-  --shadow-elevated: 0 20px 60px -20px oklch(0.72 0.18 255 / 0.35);
+  /* Soft, light gradients & shadows */
+  --gradient-primary: linear-gradient(135deg, #2563eb, #60a5fa);
+  --gradient-accent: linear-gradient(135deg, #60a5fa, #2563eb);
+  --gradient-hero: linear-gradient(180deg, #eaf6ff 0%, #ffffff 100%);
+  --gradient-text: linear-gradient(135deg, #0f172a 0%, #2563eb 100%);
 
-  --glass-bg: oklch(1 0 0 / 0.04);
-  --glass-border: oklch(1 0 0 / 0.08);
+  --card-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+  --shadow-glow: 0 8px 24px -8px rgba(37, 99, 235, 0.35);
+  --shadow-card: 0 10px 30px rgba(15, 23, 42, 0.05);
+  --shadow-elevated: 0 18px 40px -16px rgba(37, 99, 235, 0.25);
 
-  --transition-smooth: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  --glass-bg: #ffffff;
+  --glass-border: #e2e8f0;
+
+  --section-padding: 80px;
+  --container-width: 1200px;
+
+  --transition-smooth: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 @layer base {
@@ -127,34 +138,32 @@
     font-family: var(--font-sans);
     font-feature-settings: "ss01", "cv11";
     -webkit-font-smoothing: antialiased;
-    background-image:
-      radial-gradient(ellipse at top, oklch(0.78 0.2 280 / 0.12), transparent 50%),
-      radial-gradient(ellipse at bottom, oklch(0.74 0.17 195 / 0.08), transparent 50%);
-    background-attachment: fixed;
   }
   h1, h2, h3, h4 {
     font-family: var(--font-display);
     letter-spacing: -0.02em;
+    color: var(--text-primary);
   }
   ::selection {
-    background: oklch(0.72 0.18 255 / 0.35);
-    color: oklch(0.97 0.01 250);
+    background: rgba(37, 99, 235, 0.18);
+    color: var(--text-primary);
   }
 }
 
 @layer utilities {
+  /* "glass" → light surface card */
   .glass {
-    background: var(--glass-bg);
-    backdrop-filter: blur(20px) saturate(150%);
-    -webkit-backdrop-filter: blur(20px) saturate(150%);
-    border: 1px solid var(--glass-border);
+    background: var(--white);
+    border: 1px solid var(--border-color);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
   .glass-card {
-    background: linear-gradient(135deg, oklch(1 0 0 / 0.05), oklch(1 0 0 / 0.02));
-    backdrop-filter: blur(20px) saturate(150%);
-    -webkit-backdrop-filter: blur(20px) saturate(150%);
-    border: 1px solid oklch(1 0 0 / 0.08);
-    box-shadow: var(--shadow-card);
+    background: var(--white);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--card-shadow);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
   .gradient-text {
     background: var(--gradient-text);
@@ -180,27 +189,28 @@
             mask-composite: exclude;
     pointer-events: none;
   }
+  /* Very subtle grid — almost invisible */
   .grid-bg {
     background-image:
-      linear-gradient(oklch(1 0 0 / 0.04) 1px, transparent 1px),
-      linear-gradient(90deg, oklch(1 0 0 / 0.04) 1px, transparent 1px);
-    background-size: 60px 60px;
-    mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 40%, transparent 80%);
+      linear-gradient(rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 30%, transparent 75%);
   }
   .glow {
     box-shadow: var(--shadow-glow);
   }
   .reveal {
     opacity: 0;
-    transform: translateY(28px);
-    transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+    transform: translateY(20px);
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
   }
   .reveal.in-view {
     opacity: 1;
     transform: translateY(0);
   }
   .shimmer-text {
-    background: linear-gradient(90deg, oklch(0.7 0.02 255) 0%, oklch(0.97 0.01 250) 50%, oklch(0.7 0.02 255) 100%);
+    background: linear-gradient(90deg, #475569 0%, #0f172a 50%, #475569 100%);
     background-size: 200% 100%;
     -webkit-background-clip: text;
     background-clip: text;
