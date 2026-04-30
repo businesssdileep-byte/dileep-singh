@@ -6,18 +6,13 @@ export function Hero() {
       id="home"
       className="relative overflow-hidden pt-36 pb-24 sm:pt-44 sm:pb-32"
     >
-      {/* Background layers */}
+      {/* Soft, subtle background */}
       <div
         aria-hidden
         className="absolute inset-0 -z-10"
         style={{ background: "var(--gradient-hero)" }}
       />
-      <div aria-hidden className="absolute inset-0 -z-10 grid-bg" />
-      <div
-        aria-hidden
-        className="absolute left-1/2 top-10 -z-10 h-[500px] w-[500px] -translate-x-1/2 rounded-full opacity-40 blur-3xl animate-[glow-pulse_4s_ease-in-out_infinite]"
-        style={{ background: "var(--gradient-primary)" }}
-      />
+      <div aria-hidden className="absolute inset-0 -z-10 grid-bg opacity-60" />
 
       <div className="mx-auto max-w-6xl px-4 sm:px-6 text-center">
         <div className="inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 text-xs text-muted-foreground animate-[fade-up_0.6s_ease-out]">
