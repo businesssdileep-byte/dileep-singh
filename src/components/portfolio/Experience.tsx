@@ -38,7 +38,7 @@ export function Experience() {
           <div
             aria-hidden
             className="absolute left-4 top-2 bottom-2 w-px md:left-1/2 md:-translate-x-1/2"
-            style={{ background: "linear-gradient(180deg, transparent, oklch(0.72 0.18 255 / 0.5), transparent)" }}
+            style={{ background: "linear-gradient(180deg, transparent, rgba(37, 99, 235, 0.4), transparent)" }}
           />
 
           <ul className="space-y-10">

@@ -13,7 +13,7 @@ function Stat({ s }: { s: (typeof stats)[number] }) {
     <div className="glass-card relative overflow-hidden rounded-3xl p-8 transition-transform hover:-translate-y-1">
       <div
         aria-hidden
-        className="absolute -top-10 -right-10 h-32 w-32 rounded-full opacity-30 blur-2xl"
+        className="absolute -top-10 -right-10 h-32 w-32 rounded-full opacity-20 blur-2xl"
         style={{ background: "var(--gradient-primary)" }}
       />
       <div className="relative">
