@@ -6,4 +6,9 @@
 // You can pass additional config via defineConfig({ vite: { ... } }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
-export default defineConfig();
+// Disable the Cloudflare build plugin so the app builds with TanStack Start's
+// default target (Node / Vercel-compatible). On Vercel, the framework preset
+// "TanStack Start" will detect this and deploy SSR + static assets correctly.
+export default defineConfig({
+  cloudflare: false,
+});
